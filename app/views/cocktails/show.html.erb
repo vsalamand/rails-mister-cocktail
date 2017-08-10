@@ -15,6 +15,17 @@
       </p>
     </div>
     <div class="col-sm-6 col-sm-offset-3">
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :description %>
+
+        <%= f.input :ingredient_id, collection: Ingredient.all, prompt: "Select ingredient" %>
+
+
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+    <div class="col-sm-6 col-sm-offset-3">
       <%= link_to 'Back', cocktails_path %>
     </div>
   </div>
