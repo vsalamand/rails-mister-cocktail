@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm_offset-3">
+      <h1><%= @cocktail.name %></h1>
+      <p>Ingredients:
+        <% @cocktail.ingredients.each do |ingredient| %>
+          <%=  ingredient.name %>
+        <% end %>
+      </p>
+      <p>Dose:
+        <% @cocktail.doses.each do |dose| %>
+          <%= dose.description %>
+        <% end %>
+      </p>
+    </div>
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= link_to 'Back', cocktails_path %>
+    </div>
+  </div>
+</div>
